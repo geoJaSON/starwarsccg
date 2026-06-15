@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-space-950 text-slate-200 font-body antialiased;
+    background-image: radial-gradient(
+        ellipse at top,
+        rgba(30, 41, 70, 0.55),
+        transparent 60%
+      ),
+      theme('backgroundImage.starfield');
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-gold/30 text-white;
+  }
+
+  /* Slim scrollbars */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.space.600') transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+  *::-webkit-scrollbar-thumb {
+    @apply bg-space-600 rounded-full;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    @apply bg-space-500;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-space-900/70 border border-space-700 rounded-xl backdrop-blur-sm;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-sm
+      font-medium transition-colors disabled:opacity-40 disabled:pointer-events-none
+      select-none;
+  }
+  .btn-ghost {
+    @apply btn text-slate-300 hover:bg-space-700/60 hover:text-white;
+  }
+  .btn-outline {
+    @apply btn border border-space-600 text-slate-200 hover:border-gold/60 hover:text-white;
+  }
+  .btn-gold {
+    @apply btn bg-gold/90 text-space-950 font-semibold hover:bg-gold-bright;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[11px] font-medium
+      leading-none ring-1 ring-inset whitespace-nowrap;
+  }
+
+  .seg {
+    @apply text-xs font-medium px-2.5 py-1 rounded-md transition-colors
+      text-slate-400 hover:text-slate-100;
+  }
+  .seg-active {
+    @apply bg-space-700 text-white shadow-sm;
+  }
+
+  .input {
+    @apply bg-space-850 border border-space-700 rounded-lg px-3 py-2 text-sm text-slate-100
+      placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-gold/40
+      focus:border-gold/40;
+  }
+
+  /* Keep offscreen rows/tiles cheap while scrolling 2,500+ cards.
+     `auto` lets the browser cache each element's real size after first paint,
+     so the scroll position stays stable; the fallback is a close estimate. */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 320px;
+  }
+  .cv-row {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 44px;
+  }
+}

@@ -1,0 +1,13 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+
+# Raw upstream card dumps used by scripts/build-cards.mjs (regenerable)
+data/raw
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea

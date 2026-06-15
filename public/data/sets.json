@@ -1,0 +1,194 @@
+[
+  {
+    "id": "1",
+    "name": "Premiere",
+    "abbr": "P",
+    "release": "1995-12-01",
+    "position": 1,
+    "count": 324
+  },
+  {
+    "id": "2",
+    "name": "A New Hope",
+    "abbr": "ANH",
+    "release": "1996-07-01",
+    "position": 2,
+    "count": 162
+  },
+  {
+    "id": "3",
+    "name": "Hoth",
+    "abbr": "H",
+    "release": "1996-11-01",
+    "position": 3,
+    "count": 162
+  },
+  {
+    "id": "4",
+    "name": "Dagobah",
+    "abbr": "DAG",
+    "release": "1997-04-23",
+    "position": 4,
+    "count": 180
+  },
+  {
+    "id": "5",
+    "name": "Cloud City",
+    "abbr": "CC",
+    "release": "1997-11-01",
+    "position": 5,
+    "count": 181
+  },
+  {
+    "id": "6",
+    "name": "Jabba's Palace",
+    "abbr": "JP",
+    "release": "1998-05-01",
+    "position": 6,
+    "count": 180
+  },
+  {
+    "id": "7",
+    "name": "Special Edition",
+    "abbr": "SE",
+    "release": "1998-11-01",
+    "position": 7,
+    "count": 324
+  },
+  {
+    "id": "8",
+    "name": "Endor",
+    "abbr": "EDR",
+    "release": "1999-06-01",
+    "position": 8,
+    "count": 180
+  },
+  {
+    "id": "9",
+    "name": "Death Star II",
+    "abbr": "DS2",
+    "release": "2000-07-01",
+    "position": 9,
+    "count": 182
+  },
+  {
+    "id": "10",
+    "name": "Reflections 2",
+    "abbr": "Ref2",
+    "release": "2001-01-01",
+    "position": 10,
+    "count": 54
+  },
+  {
+    "id": "11",
+    "name": "Tatooine",
+    "abbr": "TAT",
+    "release": "2001-05-01",
+    "position": 11,
+    "count": 99
+  },
+  {
+    "id": "12",
+    "name": "Coruscant",
+    "abbr": "COR",
+    "release": "2001-08-01",
+    "position": 12,
+    "count": 189
+  },
+  {
+    "id": "13",
+    "name": "Reflections 3",
+    "abbr": "Ref3",
+    "release": "2001-10-01",
+    "position": 13,
+    "count": 100
+  },
+  {
+    "id": "14",
+    "name": "Theed Palace",
+    "abbr": "TP",
+    "release": "2001-11-01",
+    "position": 14,
+    "count": 129
+  },
+  {
+    "id": "101",
+    "name": "Premiere Introductory Two Player Game",
+    "abbr": "P2P",
+    "release": "1996-02-01",
+    "position": 101,
+    "count": 6
+  },
+  {
+    "id": "102",
+    "name": "Jedi Pack",
+    "abbr": "JEDI",
+    "release": "1996-10-01",
+    "position": 102,
+    "count": 11
+  },
+  {
+    "id": "103",
+    "name": "Rebel Leader Pack",
+    "abbr": "RLP",
+    "release": "1996-04-01",
+    "position": 103,
+    "count": 2
+  },
+  {
+    "id": "104",
+    "name": "Empire Strikes Back Introductory Two Player Game",
+    "abbr": "ESB2P",
+    "release": "1997-03-01",
+    "position": 104,
+    "count": 7
+  },
+  {
+    "id": "106",
+    "name": "Official Tournament Sealed Deck",
+    "abbr": "OTSD",
+    "release": "1998-05-01",
+    "position": 106,
+    "count": 18
+  },
+  {
+    "id": "108",
+    "name": "Enhanced Premiere",
+    "abbr": "EPP",
+    "release": "1998-11-01",
+    "position": 108,
+    "count": 6
+  },
+  {
+    "id": "109",
+    "name": "Enhanced Cloud City",
+    "abbr": "ECC",
+    "release": "1999-12-01",
+    "position": 109,
+    "count": 12
+  },
+  {
+    "id": "110",
+    "name": "Enhanced Jabba's Palace",
+    "abbr": "EJP",
+    "release": "2000-01-01",
+    "position": 110,
+    "count": 12
+  },
+  {
+    "id": "111",
+    "name": "Third Anthology",
+    "abbr": "3A",
+    "release": "2000-06-01",
+    "position": 111,
+    "count": 6
+  },
+  {
+    "id": "112",
+    "name": "Jabba's Palace Sealed Deck",
+    "abbr": "JPSD",
+    "release": "2000-10-01",
+    "position": 112,
+    "count": 20
+  }
+]
