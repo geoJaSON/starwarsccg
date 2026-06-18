@@ -16,6 +16,41 @@ Track what you own (with quantities, foils, condition and notes), build a want l
 - **Local-first & private** — everything is stored in your browser (IndexedDB). No account, no server.
 - **Backup / restore** — one-click JSON export and import (merge or replace).
 - **Card art** streamed on demand from the official `res.starwarsccg.org` image host.
+- **📷 Camera scanning (Android)** — point your phone at a card to add it to your collection. On-device OCR reads the title and a perceptual-hash fingerprint of the art disambiguates same-title printings — all offline, no cloud.
+
+## Android app
+
+The web app is wrapped with [Capacitor](https://capacitorjs.com/) into a native Android app, which unlocks the camera-scan feature.
+
+```bash
+npm run build            # build the web assets into dist/
+npx cap sync android     # copy assets + native plugins into the Android project
+npx cap open android     # open in Android Studio, then Run ▶ on a device/emulator
+```
+
+Or build an APK from the command line:
+
+```bash
+cd android && ./gradlew assembleDebug   # -> android/app/build/outputs/apk/debug/app-debug.apk
+```
+
+Requirements: Android Studio + SDK. Gradle is pinned to Android Studio's bundled JDK 21 in `android/gradle.properties` (the Android Gradle Plugin doesn't support newer JDKs); adjust the path there if your install differs. `android/local.properties` (your SDK path) is generated per machine and git-ignored.
+
+### How scanning works
+
+1. The camera captures a photo (`@capacitor/camera`).
+2. On-device **ML Kit** OCR reads the printed card title (offline, no network).
+3. The title is fuzzy-matched against the ~2,500 catalogue titles to find candidates.
+4. A **dHash** fingerprint of the captured art re-ranks candidates to pick the exact printing.
+5. You confirm from a short ranked list and tap **＋** to add a copy to your collection.
+
+There's a manual title-search fallback for tricky lighting, and on platforms without on-device OCR (e.g. the web build) it falls back to image-fingerprint matching alone.
+
+The reference fingerprints ship in `public/data/hashes.json`. Regenerate them (downloads every card image once, ~64 KB output) with:
+
+```bash
+npm run build-hashes
+```
 
 ## Getting started
 
@@ -58,7 +93,7 @@ local files in `data/raw/` if present, otherwise fetches the latest from GitHub.
 
 ## Tech
 
-React 19 · TypeScript · Vite · Tailwind CSS · Zustand · idb-keyval.
+React 19 · TypeScript · Vite · Tailwind CSS · Zustand · idb-keyval · Capacitor (Android) · ML Kit OCR.
 
 ---
 

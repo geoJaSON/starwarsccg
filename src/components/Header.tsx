@@ -69,7 +69,7 @@ export default function Header({ stats }: { stats: CollectionStats }) {
           </div>
         </div>
 
-        <div className="relative md:ml-2" ref={wrapRef}>
+        <div className="relative ml-auto md:ml-2" ref={wrapRef}>
           <button className="btn-outline" onClick={() => setMenuOpen((v) => !v)}>
             ⚙ Backup
           </button>

@@ -8,6 +8,8 @@ import Toolbar from '@/components/Toolbar';
 import FilterSidebar from '@/components/FilterSidebar';
 import CardGrid from '@/components/CardGrid';
 import CardDetail from '@/components/CardDetail';
+import ScanModal from '@/components/ScanModal';
+import { buildTitleIndex } from '@/lib/scan/match';
 
 function Splash({ message, error }: { message: string; error?: boolean }) {
   return (
@@ -35,6 +37,7 @@ export default function App() {
   const hydrated = useCollection((s) => s.hydrated);
   const [hydrationTimedOut, setHydrationTimedOut] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [scanOpen, setScanOpen] = useState(false);
 
   useEffect(() => {
     loadCatalogue()
@@ -62,6 +65,9 @@ export default function App() {
   }, [filtersOpen]);
 
   const allCards = data?.cards ?? [];
+
+  // Normalized title index for camera scanning (built once per catalogue load).
+  const titleIndex = useMemo(() => buildTitleIndex(allCards), [allCards]);
 
   // The filtered list only depends on the collection when filtering by ownership,
   // so routine qty edits don't recompute the list or reset scroll paging.
@@ -164,6 +170,16 @@ export default function App() {
       )}
 
       <CardDetail cardById={data.cardById} setById={data.setById} />
+
+      {/* Scan a card with the camera */}
+      <button
+        onClick={() => setScanOpen(true)}
+        aria-label="Scan a card"
+        className="btn-gold fixed bottom-5 right-5 z-30 h-14 w-14 rounded-full text-2xl shadow-2xl shadow-gold/20"
+      >
+        ⊹
+      </button>
+      {scanOpen && <ScanModal index={titleIndex} onClose={() => setScanOpen(false)} />}
 
       <footer className="border-t border-space-800 px-6 py-4 text-center text-[11px] text-slate-400">
         Card data &amp; images courtesy of the SWCCG Players Committee (res.starwarsccg.org). This is a

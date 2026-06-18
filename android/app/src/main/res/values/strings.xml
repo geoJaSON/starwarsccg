@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SWCCG Catalogue</string>
+    <string name="title_activity_main">SWCCG Catalogue</string>
+    <string name="package_name">org.swccg.catalogue</string>
+    <string name="custom_url_scheme">org.swccg.catalogue</string>
+</resources>

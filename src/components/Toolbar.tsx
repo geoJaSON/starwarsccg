@@ -19,23 +19,24 @@ export default function Toolbar({ total, shown, onOpenFilters }: Props) {
 
   return (
     <div className="sticky top-0 z-20 -mx-4 mb-4 border-b border-space-800 bg-space-950/80 px-4 py-3 backdrop-blur-md sm:-mx-6 sm:px-6">
+      {/* Search — its own full-width row */}
+      <div className="relative mb-2">
+        <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">
+          ⌕
+        </span>
+        <input
+          type="search"
+          value={ui.search}
+          onChange={(e) => ui.setSearch(e.target.value)}
+          placeholder="Search title, lore, game text…"
+          className="input w-full pl-8"
+        />
+      </div>
+
       <div className="flex flex-wrap items-center gap-2">
         <button className="btn-outline lg:hidden" onClick={onOpenFilters} aria-label="Open filters">
           ☰ Filters
         </button>
-
-        <div className="relative min-w-0 flex-1 sm:max-w-sm">
-          <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-500">
-            ⌕
-          </span>
-          <input
-            type="search"
-            value={ui.search}
-            onChange={(e) => ui.setSearch(e.target.value)}
-            placeholder="Search title, lore, game text…"
-            className="input w-full pl-8"
-          />
-        </div>
 
         <div className="flex items-center gap-1 rounded-lg bg-space-850 p-1">
           {SORTS.map((s) => (

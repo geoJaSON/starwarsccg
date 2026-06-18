@@ -40,6 +40,7 @@ function Detail({ card, set }: Props) {
   const select = useUi((s) => s.select);
   const entry = useCollection((s) => s.entries[card.id]);
   const c = useCollection();
+
   const [showBack, setShowBack] = useState(false);
   const dialogRef = useRef<HTMLDivElement>(null);
 
